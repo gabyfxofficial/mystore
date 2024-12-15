@@ -1,0 +1,183 @@
+.header {
+  height: 80px;
+  padding: 0 30px;
+  background: linear-gradient(90deg, #1e293b, #0f172a);
+  display: flex;
+  align-items: center; /* Asigură alinierea pe verticală */
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.page-content {
+  padding-top: 80px; /* Adaugă spațiu pentru header */
+}
+
+/* Container */
+.header-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center; /* Aliniază toate elementele pe aceeași linie verticală */
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #38bdf8;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  align-items: center; /* Asigură alinierea link-urilor */
+  margin: 0; /* Elimină marginile implicite */
+}
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+/* Cart and Account Section */
+.cart-account {
+  display: flex;
+  align-items: center; /* Asigură alinierea pe aceeași linie */
+  gap: 20px;
+}
+
+.cart-link {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cart-link:hover {
+  background-color: #38bdf8;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #ff5f6d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.account-icon {
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* Asigură alinierea pe aceeași linie */
+  gap: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.account-icon:hover {
+  color: #38bdf8;
+}
+
+/* Account Dropdown */
+.account {
+  position: relative;
+  display: flex;
+  align-items: center; /* Asigură alinierea pe aceeași linie */
+}
+
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
+  display: none;
+  width: 200px;
+}
+
+.account-dropdown.open {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-dropdown a {
+  font-size: 14px;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.account-dropdown a:hover {
+  background-color: #38bdf8;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .cart-account {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .cart-link {
+    font-size: 14px;
+  }
+
+  .account-dropdown {
+    width: 160px;
+  }
+}
