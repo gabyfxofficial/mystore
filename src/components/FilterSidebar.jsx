@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import "./FilterSidebar.css";
 
 function FilterSidebar({ filters, setFilters }) {
   const [isVisible, setIsVisible] = useState(true);
@@ -8,14 +9,14 @@ function FilterSidebar({ filters, setFilters }) {
   const [selectedModels, setSelectedModels] = useState(filters.models || []);
   const [selectedStorage, setSelectedStorage] = useState(filters.storage || []);
   const [selectedColors, setSelectedColors] = useState(filters.colors || []);
-  const [maxPrice, setMaxPrice] = useState(filters.maxPrice || 3000); // Updated maxPrice to 3000
+  const [maxPrice, setMaxPrice] = useState(filters.maxPrice || 3000);
 
   useEffect(() => {
     setSearch(filters.search || "");
     setSelectedModels(filters.models || []);
     setSelectedStorage(filters.storage || []);
     setSelectedColors(filters.colors || []);
-    setMaxPrice(filters.maxPrice || 3000); // Ensure reset works for maxPrice = 3000
+    setMaxPrice(filters.maxPrice || 3000);
   }, [filters]);
 
   const handleApplyFilters = () => {
@@ -33,7 +34,7 @@ function FilterSidebar({ filters, setFilters }) {
     setSelectedModels([]);
     setSelectedStorage([]);
     setSelectedColors([]);
-    setMaxPrice(3000); // Reset maxPrice to 3000
+    setMaxPrice(3000);
     setFilters({
       search: "",
       models: [],
@@ -69,7 +70,7 @@ function FilterSidebar({ filters, setFilters }) {
               <input
                 type="range"
                 min="0"
-                max="3000" // Updated max to 3000
+                max="3000"
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(Number(e.target.value))}
                 className="slider-range"

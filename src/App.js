@@ -1,5 +1,16 @@
 import React, { useState, useMemo } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import Login from "./components/Login";
+import "./components/Login.css";
+import "./pages/Notification.css";
+import "./components/FilterSidebar.css";
+import "./components/ProductCard.css";
 import Header from "./components/Header";
 import FilterSidebar from "./components/FilterSidebar";
 import ProductList from "./components/ProductList";
@@ -8,15 +19,17 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
-import OrderHistory from "./pages/OrderHistory";
 import MyAccount from "./pages/MyAccount";
-import CheckoutPage from "./pages/CheckoutPage"; // Importă CheckoutPage
+import Checkout from "./pages/Checkout";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import PurchaseCompleted from "./pages/PurchaseCompleted";
 import productsData from "./data/products";
 import { CartProvider } from "./pages/CartContext";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+function AppContent() {
   const [filters, setFilters] = useState({
     search: "",
     models: [],
@@ -55,34 +68,83 @@ function App() {
     });
   }, [filters, products]);
 
+  const isAuthenticated = localStorage.getItem("token") !== null;
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
+
+  return (
+    <div className="app">
+      {!isLoginPage && <Header />}
+      <div className="page-content">
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/"
+            element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/products"
+            element={
+              isAuthenticated ? (
+                <div className="content">
+                  <FilterSidebar filters={filters} setFilters={setFilters} />
+                  <ProductList products={filteredProducts} />
+                </div>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/about"
+            element={isAuthenticated ? <About /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/contact"
+            element={isAuthenticated ? <Contact /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/cart"
+            element={isAuthenticated ? <Cart /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/my-account"
+            element={isAuthenticated ? <MyAccount /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/checkout"
+            element={isAuthenticated ? <Checkout /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/PrivacyPolicy"
+            element={
+              isAuthenticated ? <PrivacyPolicy /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/TermsOfService"
+            element={
+              isAuthenticated ? <TermsOfService /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/purchase-completed"
+            element={
+              isAuthenticated ? <PurchaseCompleted /> : <Navigate to="/login" />
+            }
+          />
+        </Routes>
+      </div>
+      {!isLoginPage && <Footer />}
+    </div>
+  );
+}
+
+function App() {
   return (
     <CartProvider>
       <Router>
-        <div className="app">
-          <Header />
-          <div className="page-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/products"
-                element={
-                  <div className="content">
-                    <FilterSidebar filters={filters} setFilters={setFilters} />
-                    <ProductList products={filteredProducts} />
-                  </div>
-                }
-              />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/orders-history" element={<OrderHistory />} />
-              <Route path="/my-account" element={<MyAccount />} />
-              <Route path="/checkout" element={<CheckoutPage />} />{" "}
-              {/* Ruta pentru Checkout */}
-            </Routes>
-          </div>
-          <Footer />
-        </div>
+        <AppContent />
       </Router>
     </CartProvider>
   );

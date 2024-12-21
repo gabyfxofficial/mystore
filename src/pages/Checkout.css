@@ -1,0 +1,266 @@
+:root {
+  --primary-color: #6c63ff;
+  --secondary-color: #333;
+  --background-color: #f7f7fa;
+  --card-bg: #fff;
+  --text-color: #444;
+  --border-color: #ddd;
+  --button-bg: #6c63ff;
+  --button-hover-bg: #5548e6;
+  --button-text-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.checkout-page {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.checkout-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.billing-section,
+.order-summary-section,
+.payment-section {
+  flex: 1 1 48%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+
+.billing-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.billing-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.order-items {
+  margin-bottom: 20px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.item-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.item-price {
+  font-size: 1rem;
+}
+
+.order-summary-totals {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.order-summary-totals p {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.order-summary-totals strong {
+  font-size: 1.2rem;
+}
+
+.payment-section {
+  text-align: center;
+}
+
+.payment-methods-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.payment-option-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.payment-option-card:hover {
+  background-color: #f3d0ff;
+  color: white;
+  border-color: #f3d0ff;
+}
+
+.payment-option-card input {
+  display: none;
+}
+
+.payment-option-card input:checked + .payment-option-content {
+  background: linear-gradient(135deg, #a855f7, #d946ef);
+  color: white;
+  border: 2px solid #d946ef;
+  box-shadow: 0 0 15px rgba(216, 182, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.payment-option-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.payment-icon {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.payment-option-content span:last-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background: var(--button-hover-bg);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    flex-direction: column;
+  }
+
+  .billing-section,
+  .order-summary-section,
+  .payment-section {
+    flex: 1 1 100%;
+  }
+
+  .payment-methods-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .payment-option-card {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .billing-input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .item-name {
+    font-size: 1rem;
+  }
+
+  .item-price {
+    font-size: 0.9rem;
+  }
+
+  .order-summary-totals p {
+    font-size: 1rem;
+  }
+
+  .order-summary-totals strong {
+    font-size: 1.1rem;
+  }
+}

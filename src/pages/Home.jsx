@@ -6,8 +6,8 @@ const Home = () => {
     <div className="home">
       {/* Hero Section */}
       <div className="hero-section">
-        <h1>Welcome to Iphone Store!</h1>
-        <p>Explore the latest iPhones, accessories, and exclusive offers!</p>
+        <h1>Welcome to GABY STORE!</h1>
+        <p>Explore the latest iPhones and exclusive offers!</p>
         <button
           className="shop-now-button"
           onClick={() => (window.location.href = "Products")}

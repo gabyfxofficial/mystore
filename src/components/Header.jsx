@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -13,19 +13,24 @@ import "./Header.css";
 
 function Header() {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
-  const dropdownRef = useRef(null); // Reference for the dropdown
+  const dropdownRef = useRef(null);
   const { cartItems } = useCart();
   const cartCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+  const navigate = useNavigate();
 
   const toggleAccountMenu = () => {
     setAccountMenuOpen((prev) => !prev);
   };
 
   const closeAccountMenu = () => {
-    setAccountMenuOpen(false); // Close the dropdown
+    setAccountMenuOpen(false);
   };
 
-  // Close the dropdown if a click occurs outside of it
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -42,12 +47,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        {/* Logo */}
         <Link to="/" className="logo">
-          IPHONE STORE
+          GABY STORE
         </Link>
-
-        {/* Navigation */}
         <nav className="nav">
           <ul className="nav-links">
             <li>
@@ -61,23 +63,21 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/about">
-                <FontAwesomeIcon icon={faInfoCircle} /> About
-              </Link>
-            </li>
-            <li>
               <Link to="/contact">
                 <FontAwesomeIcon icon={faUsers} /> Contact
               </Link>
             </li>
+            <li>
+              <Link to="/about">
+                <FontAwesomeIcon icon={faInfoCircle} /> About
+              </Link>
+            </li>
           </ul>
         </nav>
-
-        {/* Cart and Account */}
         <div className="cart-account">
           <div className="cart">
             <Link to="/cart" className="cart-link">
-              <FontAwesomeIcon icon={faShoppingCart} size="lg" /> Cart
+              <FontAwesomeIcon icon={faShoppingCart} size="lg" />
               {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
             </Link>
           </div>
@@ -88,12 +88,12 @@ function Header() {
             <div
               className={`account-dropdown ${accountMenuOpen ? "open" : ""}`}
             >
-              <Link to="/orders-history" onClick={closeAccountMenu}>
-                Order History
-              </Link>
               <Link to="/my-account" onClick={closeAccountMenu}>
                 My Account
               </Link>
+              <button className="logout-button" onClick={handleLogout}>
+                Logout
+              </button>
             </div>
           </div>
         </div>

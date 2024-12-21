@@ -1,11 +1,11 @@
 import React from "react";
-import { useCart } from "../pages/CartContext";
-import { useNavigate } from "react-router-dom"; // Import corect
+import { useCart } from "./CartContext";
+import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 
 function Cart() {
   const { cartItems, updateQuantity, removeFromCart } = useCart();
-  const navigate = useNavigate(); // Instanță pentru navigare
+  const navigate = useNavigate();
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -13,7 +13,7 @@ function Cart() {
   );
 
   const handleProceedToCheckout = () => {
-    navigate("/checkout"); // Navigare corectă la pagina de checkout
+    navigate("/checkout");
   };
 
   return (

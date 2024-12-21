@@ -12,13 +12,13 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <p>Copyright © 2024 - IPHONE STORE</p>
+      <p>Copyright © 2024 - GABY STORE</p>
       <ul className="footer-links">
         <li>
-          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/PrivacyPolicy">Privacy Policy</Link>
         </li>
         <li>
-          <Link to="/terms-of-service">Terms of Service</Link>
+          <Link to="/TermsOfService">Terms of Service</Link>
         </li>
       </ul>
       <ul className="social-icons">

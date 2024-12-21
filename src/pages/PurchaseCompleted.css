@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.purchase-completed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  opacity: 0;
+  animation: fadeIn 1s forwards, slideUp 0.8s forwards;
+  background: linear-gradient(to bottom, #9c4dcc, #ff80ab);
+}
+
+.purchase-completed h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeInUp 1s 0.5s forwards;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.purchase-completed p {
+  font-size: 24px;
+  margin: 8px 0;
+  opacity: 0;
+  animation: fadeInUp 1s 1s forwards;
+  line-height: 32px;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navigate-home-button {
+  margin-top: 16px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to right, #6a1b9a, #ff4081);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navigate-home-button:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(to right, #4a0072, #e91e63);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navigate-home-button:focus {
+  outline: none;
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.5);
+}
+
+.navigate-home-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .purchase-completed h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .purchase-completed p {
+    font-size: 20px;
+    margin: 6px 0;
+    line-height: 28px;
+  }
+
+  .navigate-home-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+}

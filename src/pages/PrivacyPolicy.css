@@ -1,28 +1,22 @@
-/* Ensure the gradient background covers the entire page */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    135deg,
-    #5b2a90,
-    #e87ea1,
-    #ffd1a9
-  ); /* Gradient background */
+  background: linear-gradient(135deg, #5b2a90, #e87ea1, #ffd1a9);
 }
 
 .privacy-policy {
   padding: 30px;
-  background: #ffffff; /* White content background */
+  background: #ffffff;
   color: #333;
   max-width: 900px;
   margin: 20px auto;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  min-height: 80vh; /* Ensures page content takes up enough space */
+  min-height: 80vh;
   animation: fadeIn 1.5s ease-in-out;
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  overflow-y: auto;
 }
 
 .privacy-policy h1 {
