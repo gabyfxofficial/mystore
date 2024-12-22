@@ -30,7 +30,7 @@ body {
 h1 {
   text-align: center;
   color: var(--primary-color);
-  font-size: 2rem;
+  font-size: 32px;
   margin: 20px 0;
 }
 
@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   margin-bottom: 20px;
   color: var(--secondary-color);
 }
@@ -93,12 +93,12 @@ h2 {
 }
 
 .item-name {
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .item-price {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .order-summary-totals {
@@ -114,7 +114,7 @@ h2 {
 }
 
 .order-summary-totals strong {
-  font-size: 1.2rem;
+  font-size: 20px;
 }
 
 .payment-section {
@@ -169,12 +169,12 @@ h2 {
 }
 
 .payment-icon {
-  font-size: 2.5rem;
+  font-size: 40px;
   margin-bottom: 5px;
 }
 
 .payment-option-content span:last-child {
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -185,7 +185,7 @@ h2 {
   color: var(--button-text-color);
   border: none;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -196,6 +196,39 @@ h2 {
   transform: scale(1.05);
 }
 
+/* Discount Code Section */
+.discount-code-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.discount-code-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  width: 60%;
+}
+
+.apply-discount-button {
+  padding: 10px 20px;
+  background: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.apply-discount-button:hover {
+  background: var(--button-hover-bg);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .checkout-container {
     flex-direction: column;
@@ -221,20 +254,20 @@ h2 {
   }
 
   h1 {
-    font-size: 1.6rem;
+    font-size: 24px;
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 20px;
   }
 
   .billing-input {
     padding: 10px;
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 
   .submit-button {
-    font-size: 1rem;
+    font-size: 16px;
     padding: 12px 25px;
   }
 
@@ -249,18 +282,18 @@ h2 {
   }
 
   .item-name {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .item-price {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 
   .order-summary-totals p {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .order-summary-totals strong {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 }

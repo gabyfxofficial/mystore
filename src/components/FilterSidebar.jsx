@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import "./FilterSidebar.css";
+import "../styles/FilterSidebar.css";
 
 function FilterSidebar({ filters, setFilters }) {
   const [isVisible, setIsVisible] = useState(true);

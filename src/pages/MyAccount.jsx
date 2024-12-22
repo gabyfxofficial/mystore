@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./MyAccount.css";
+import "../styles/MyAccount.css";
 
 function MyAccount() {
   const [user, setUser] = useState(null);

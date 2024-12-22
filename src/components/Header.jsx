@@ -9,7 +9,7 @@ import {
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "../pages/CartContext";
-import "./Header.css";
+import "../styles/Header.css";
 
 function Header() {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);

@@ -7,7 +7,7 @@ import {
   faTiktok,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import "./Footer.css";
+import "../styles/Footer.css";
 
 function Footer() {
   return (

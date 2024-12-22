@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "../styles/Home.css";
 
 const Home = () => {
   return (
@@ -14,6 +14,15 @@ const Home = () => {
         >
           Start Shopping
         </button>
+      </div>
+
+      {/* Promo Section */}
+      <div className="promo-section">
+        <h2>Special Winter Discount</h2>
+        <p>
+          Use the code <strong>WINTER</strong> at checkout to get 20% off on all
+          products!
+        </p>
       </div>
 
       {/* Features Section */}

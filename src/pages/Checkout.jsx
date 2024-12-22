@@ -2,19 +2,41 @@ import React, { useState } from "react";
 import { useCart } from "./CartContext";
 import { useNavigate } from "react-router-dom";
 import Notification from "./Notification";
-import "./Checkout.css";
+import "../styles/Checkout.css";
 
 const Checkout = () => {
   const { cartItems, clearCart } = useCart();
   const navigate = useNavigate();
   const [notification, setNotification] = useState(null);
+  const [discountCode, setDiscountCode] = useState("");
+  const [isDiscountApplied, setIsDiscountApplied] = useState(false);
   const SHIPPING_COST = 5.99;
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const grandTotal = totalPrice + SHIPPING_COST;
+
+  const discountedTotal = isDiscountApplied
+    ? totalPrice * 0.8 // Apply 20% discount
+    : totalPrice;
+
+  const grandTotal = discountedTotal + SHIPPING_COST;
+
+  const handleApplyDiscount = () => {
+    if (discountCode.trim().toUpperCase() === "WINTER") {
+      setIsDiscountApplied(true);
+      setNotification({
+        message: "Discount code applied successfully! You saved 20%.",
+        type: "success",
+      });
+    } else {
+      setNotification({
+        message: "Invalid discount code. Please try again.",
+        type: "error",
+      });
+    }
+  };
 
   const handleCompletePurchase = (event) => {
     event.preventDefault();
@@ -110,6 +132,11 @@ const Checkout = () => {
             <p>
               Subtotal: <span>${totalPrice.toFixed(2)}</span>
             </p>
+            {isDiscountApplied && (
+              <p>
+                Discount (20%): <span>-${(totalPrice * 0.2).toFixed(2)}</span>
+              </p>
+            )}
             <p>
               Shipping: <span>${SHIPPING_COST.toFixed(2)}</span>
             </p>
@@ -118,6 +145,23 @@ const Checkout = () => {
                 Total: <span>${grandTotal.toFixed(2)}</span>
               </strong>
             </p>
+          </div>
+
+          <div className="discount-code-section">
+            <input
+              type="text"
+              placeholder="Enter discount code"
+              value={discountCode}
+              onChange={(e) => setDiscountCode(e.target.value)}
+              className="discount-code-input"
+            />
+            <button
+              type="button"
+              className="apply-discount-button"
+              onClick={handleApplyDiscount}
+            >
+              Apply Code
+            </button>
           </div>
         </section>
       </div>

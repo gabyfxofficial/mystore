@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useCart } from "../pages/CartContext";
-import "./ProductCard.css";
+import "../styles/ProductCard.css";
 function ProductCard({ product }) {
   const { addToCart } = useCart();
 

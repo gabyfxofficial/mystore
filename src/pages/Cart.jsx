@@ -1,7 +1,7 @@
 import React from "react";
 import { useCart } from "./CartContext";
 import { useNavigate } from "react-router-dom";
-import "./Cart.css";
+import "../styles/Cart.css";
 
 function Cart() {
   const { cartItems, updateQuantity, removeFromCart } = useCart();

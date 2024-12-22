@@ -7,10 +7,10 @@ import {
   useLocation,
 } from "react-router-dom";
 import Login from "./components/Login";
-import "./components/Login.css";
-import "./pages/Notification.css";
-import "./components/FilterSidebar.css";
-import "./components/ProductCard.css";
+import "./styles/Login.css";
+import "./styles/Notification.css";
+import "./styles/FilterSidebar.css";
+import "./styles/ProductCard.css";
 import Header from "./components/Header";
 import FilterSidebar from "./components/FilterSidebar";
 import ProductList from "./components/ProductList";

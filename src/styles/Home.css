@@ -48,6 +48,29 @@
   color: white;
 }
 
+/* Promo Section */
+.promo-section {
+  background: rgba(255, 255, 255, 0.9);
+  color: #5b2a90;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.promo-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #e87ea1;
+}
+
+.promo-section p {
+  font-size: 20px;
+}
+
 .features,
 .customer-benefits {
   margin-bottom: 70px;
