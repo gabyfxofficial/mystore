@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Navigate,
