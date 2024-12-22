@@ -7,14 +7,11 @@ import {
   useLocation,
 } from "react-router-dom";
 import Login from "./components/Login";
-import "./styles/Login.css";
-import "./styles/Notification.css";
-import "./styles/FilterSidebar.css";
-import "./styles/ProductCard.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import FilterSidebar from "./components/FilterSidebar";
 import ProductList from "./components/ProductList";
-import Footer from "./components/Footer";
+import LiveChat from "./components/LiveChat";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -26,6 +23,11 @@ import TermsOfService from "./pages/TermsOfService";
 import PurchaseCompleted from "./pages/PurchaseCompleted";
 import productsData from "./data/products";
 import { CartProvider } from "./pages/CartContext";
+import "./styles/Login.css";
+import "./styles/Notification.css";
+import "./styles/FilterSidebar.css";
+import "./styles/ProductCard.css";
+import "./styles/LiveChat.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -136,6 +138,7 @@ function AppContent() {
         </Routes>
       </div>
       {!isLoginPage && <Footer />}
+      {!isLoginPage && <LiveChat />}
     </div>
   );
 }
