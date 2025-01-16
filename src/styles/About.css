@@ -1,0 +1,138 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 30px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #5b2a90, #e87ea1, #ffd1a9);
+  color: white;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.about h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: slideInFromTop 1s ease-in-out;
+}
+
+.about p {
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-bottom: 30px;
+  color: #f9f9f9;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+.about a {
+  color: #ffd1a9;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.about a:hover {
+  color: #e87ea1;
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .about h1 {
+    font-size: 36px;
+  }
+
+  .about p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 90%;
+  }
+
+  .about a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about h1 {
+    font-size: 30px;
+  }
+
+  .about p {
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 100%;
+  }
+
+  .about {
+    padding: 20px;
+  }
+
+  .about a {
+    font-size: 14px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://imgur.com/i5q4V1O.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: -1;
+}

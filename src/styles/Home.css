@@ -1,0 +1,246 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #5b2a90, #e87ea1, #ffd1a9);
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-section {
+  padding: 100px 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  margin-bottom: 60px;
+  color: white;
+  animation: slideInFromTop 1.5s ease;
+}
+
+.hero-section h1 {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  animation: fadeInText 2s ease-in-out;
+}
+
+.hero-section p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  animation: fadeInText 2s ease-in-out;
+}
+
+.shop-now-button {
+  padding: 15px 40px;
+  font-size: 20px;
+  color: #5b2a90;
+  background: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.shop-now-button:hover {
+  background: #e87ea1;
+  transform: scale(1.1);
+  color: white;
+}
+
+.promo-section {
+  background: rgba(255, 255, 255, 0.9);
+  color: #5b2a90;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.promo-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #e87ea1;
+}
+
+.promo-section p {
+  font-size: 20px;
+}
+
+.features,
+.customer-benefits {
+  margin-bottom: 70px;
+}
+
+.features h2,
+.customer-benefits h2 {
+  font-size: 38px;
+  margin-bottom: 30px;
+  animation: fadeInText 1.5s ease;
+}
+
+.feature-cards,
+.benefit-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  animation: fadeIn 2s ease;
+}
+
+.feature-card,
+.benefit-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 30px;
+  width: 320px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  color: #5b2a90;
+}
+
+.feature-card:hover,
+.benefit-card:hover {
+  transform: scale(1.05);
+  background: #e87ea1;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials h2 {
+  font-size: 38px;
+  margin-bottom: 30px;
+  animation: fadeInText 1.5s ease;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  animation: fadeIn 2s ease;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 30px;
+  width: 320px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  color: #5b2a90;
+}
+
+.testimonial-card:hover {
+  background: #e87ea1;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.snowflake {
+  position: absolute;
+  top: -10%;
+  color: white;
+  opacity: 0.8;
+  animation: fall 10s linear infinite, drift 5s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 0.5;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-10px) rotate(15deg);
+  }
+  50% {
+    transform: translateX(10px) rotate(-15deg);
+  }
+  75% {
+    transform: translateX(-10px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-cards,
+  .benefit-cards,
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card,
+  .benefit-card,
+  .testimonial-card {
+    width: 90%;
+  }
+
+  .snowflake {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-card,
+  .benefit-card,
+  .testimonial-card {
+    width: 100%;
+  }
+
+  .snowflake {
+    font-size: 1em;
+  }
+}

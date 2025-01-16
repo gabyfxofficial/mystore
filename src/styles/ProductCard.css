@@ -1,0 +1,138 @@
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  height: 475px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  justify-items: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 18px auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  background-color: #f8f8f8;
+}
+
+.product-name {
+  font-size: 18px;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-model {
+  font-size: 14px;
+  color: #e14b57;
+  margin-bottom: 5px;
+}
+
+.product-storage {
+  font-size: 14px;
+  color: cadetblue;
+  margin-bottom: 5px;
+}
+
+.product-color {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #2ecc71;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.add-to-cart-button,
+.add-to-wishlist-button {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-button {
+  background-color: #007bff;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.add-to-wishlist-button {
+  background-color: #ff5f6d;
+}
+
+.add-to-wishlist-button:hover {
+  background-color: #e14b57;
+  transform: translateY(-2px);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-card {
+    padding: 10px;
+    height: auto;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .product-name {
+    font-size: 16px;
+  }
+
+  .product-price {
+    font-size: 14px;
+  }
+
+  .product-actions {
+    gap: 8px;
+  }
+}
