@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import {
   HashRouter as Router,
   Routes,
@@ -33,16 +33,6 @@ import "./styles/Wishlist.css";
 import "./styles/LiveChat.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
 
 function AppContent() {
   const [filters, setFilters] = useState({
@@ -86,10 +76,6 @@ function AppContent() {
   const isAuthenticated = localStorage.getItem("token") !== null;
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
 
   return (
     <div className="app">
@@ -176,7 +162,6 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <ScrollToTop />
         <AppContent />
       </Router>
     </Provider>

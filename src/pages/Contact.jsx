@@ -12,7 +12,7 @@ const Contact = () => {
       <div className="contact-content">
         <div className="contact-details">
           <h2>Our Contact Information</h2>
-          <p>Email: support@iphonestore.com</p>
+          <p>Email: support@gabystore.com</p>
           <p>Phone: 0732612932</p>
           <p>Address: Str. George Enescu Nr. 30, Ialomita, Fetesti</p>
         </div>

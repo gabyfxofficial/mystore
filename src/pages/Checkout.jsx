@@ -41,6 +41,11 @@ const Checkout = () => {
 
   const handleBillingChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === "phoneNumber" && !/^\d*$/.test(value)) {
+      return;
+    }
+
     setBillingDetails((prevDetails) => ({
       ...prevDetails,
       [name]: value,
@@ -120,6 +125,7 @@ const Checkout = () => {
                 className="billing-input"
                 value={billingDetails[name]}
                 onChange={handleBillingChange}
+                pattern={name === "phoneNumber" ? "\\d*" : undefined}
                 required
               />
             ))}

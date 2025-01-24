@@ -6,6 +6,18 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cart h1 {
@@ -45,6 +57,12 @@
   height: 50px;
   object-fit: cover;
   border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cart-summary {
@@ -54,6 +72,18 @@
 .cart-summary h2 {
   font-size: 20px;
   color: #1e293b;
+  animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .checkout-button {
@@ -64,11 +94,12 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .checkout-button:hover {
   background-color: #0f172a;
+  transform: scale(1.05);
 }
 
 .cart-table input[type="number"] {
@@ -76,6 +107,13 @@
   padding: 5px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.cart-table input[type="number"]:focus {
+  border-color: #38bdf8;
+  outline: none;
+  box-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
 }
 
 .cart-table button {
@@ -86,11 +124,12 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .cart-table button:hover {
   background-color: #c53047;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
