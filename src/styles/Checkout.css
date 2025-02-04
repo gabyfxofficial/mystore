@@ -12,13 +12,6 @@
   --highlight-color: #a855f7;
 }
 
-body {
-  font-family: "Arial", sans-serif;
-  background-color: var(--background-color);
-  margin: 0;
-  padding: 0;
-}
-
 .checkout-page {
   max-width: 1000px;
   margin: 30px auto;

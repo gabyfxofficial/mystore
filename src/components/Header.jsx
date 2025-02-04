@@ -22,17 +22,15 @@ function Header() {
   const [wishlistChanged, setWishlistChanged] = useState(false);
   const navigate = useNavigate();
 
-  const toggleAside = () => setAsideOpen(!asideOpen);
+  const toggleAside = () => {
+    setAsideOpen(!asideOpen);
+    document.body.classList.toggle("menu-open", !asideOpen); // Prevent scroll when menu is open
+  };
 
   const totalCartItems = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
   );
-
-  useEffect(() => {
-    document.body.classList.toggle("no-scroll", asideOpen);
-    return () => document.body.classList.remove("no-scroll");
-  }, [asideOpen]);
 
   useEffect(() => {
     if (totalCartItems > 0) {
@@ -48,27 +46,37 @@ function Header() {
     }
   }, [wishlist]);
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <Link to="/">GABY STORE</Link>
+          <Link to="/" onClick={scrollToTop}>
+            GABY STORE
+          </Link>
         </div>
 
         <nav className="nav-links">
-          <Link to="/" className="nav-item">
+          <Link to="/" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faHome} /> Home
           </Link>
-          <Link to="/products" className="nav-item">
+          <Link to="/products" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faShoppingCart} /> Products
           </Link>
-          <Link to="/contact" className="nav-item">
+          <Link to="/contact" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faUsers} /> Contact
           </Link>
-          <Link to="/about" className="nav-item">
+          <Link to="/about" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faInfoCircle} /> About
           </Link>
-          <Link to="/wishlist" className="nav-item badge-container">
+          <Link
+            to="/wishlist"
+            className="nav-item badge-container"
+            onClick={scrollToTop}
+          >
             <FontAwesomeIcon icon={faHeart} /> Wishlist
             {wishlist.length > 0 && (
               <span
@@ -78,7 +86,11 @@ function Header() {
               </span>
             )}
           </Link>
-          <Link to="/cart" className="nav-item badge-container">
+          <Link
+            to="/cart"
+            className="nav-item badge-container"
+            onClick={scrollToTop}
+          >
             <FontAwesomeIcon icon={faShoppingCart} /> Cart
             {totalCartItems > 0 && (
               <span className={`badge-circle ${cartChanged ? "changed" : ""}`}>
@@ -86,7 +98,7 @@ function Header() {
               </span>
             )}
           </Link>
-          <Link to="/my-account" className="nav-item">
+          <Link to="/my-account" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faUserCircle} /> My Account
           </Link>
           <button
@@ -94,6 +106,7 @@ function Header() {
             onClick={() => {
               localStorage.removeItem("token");
               navigate("/login");
+              scrollToTop();
             }}
           >
             <FontAwesomeIcon icon={faSignOutAlt} /> Logout
@@ -119,16 +132,44 @@ function Header() {
         </button>
 
         <div className="aside-section-title">Navigation</div>
-        <Link to="/" className="aside-item" onClick={toggleAside}>
+        <Link
+          to="/"
+          className="aside-item"
+          onClick={() => {
+            toggleAside();
+            scrollToTop();
+          }}
+        >
           <FontAwesomeIcon icon={faHome} /> Home
         </Link>
-        <Link to="/products" className="aside-item" onClick={toggleAside}>
+        <Link
+          to="/products"
+          className="aside-item"
+          onClick={() => {
+            toggleAside();
+            scrollToTop();
+          }}
+        >
           <FontAwesomeIcon icon={faShoppingCart} /> Products
         </Link>
-        <Link to="/contact" className="aside-item" onClick={toggleAside}>
+        <Link
+          to="/contact"
+          className="aside-item"
+          onClick={() => {
+            toggleAside();
+            scrollToTop();
+          }}
+        >
           <FontAwesomeIcon icon={faUsers} /> Contact
         </Link>
-        <Link to="/about" className="aside-item" onClick={toggleAside}>
+        <Link
+          to="/about"
+          className="aside-item"
+          onClick={() => {
+            toggleAside();
+            scrollToTop();
+          }}
+        >
           <FontAwesomeIcon icon={faInfoCircle} /> About
         </Link>
 
@@ -138,7 +179,10 @@ function Header() {
         <Link
           to="/cart"
           className="aside-item badge-container"
-          onClick={toggleAside}
+          onClick={() => {
+            toggleAside();
+            scrollToTop();
+          }}
         >
           <FontAwesomeIcon icon={faShoppingCart} /> Cart
           {totalCartItems > 0 && (
@@ -150,7 +194,10 @@ function Header() {
         <Link
           to="/wishlist"
           className="aside-item badge-container"
-          onClick={toggleAside}
+          onClick={() => {
+            toggleAside();
+            scrollToTop();
+          }}
         >
           <FontAwesomeIcon icon={faHeart} /> Wishlist
           {wishlist.length > 0 && (
@@ -165,7 +212,14 @@ function Header() {
         <div className="aside-divider"></div>
 
         <div className="aside-section-title">Account</div>
-        <Link to="/my-account" className="aside-item" onClick={toggleAside}>
+        <Link
+          to="/my-account"
+          className="aside-item"
+          onClick={() => {
+            toggleAside();
+            scrollToTop();
+          }}
+        >
           <FontAwesomeIcon icon={faUserCircle} /> My Account
         </Link>
 
@@ -175,6 +229,7 @@ function Header() {
             localStorage.removeItem("token");
             toggleAside();
             navigate("/login");
+            scrollToTop();
           }}
         >
           <FontAwesomeIcon icon={faSignOutAlt} /> Logout

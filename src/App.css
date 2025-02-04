@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-html,
 body {
   height: 100%;
   margin: 0;
@@ -12,11 +11,12 @@ body {
   background: url("https://i.imgur.com/i5q4V1O.png") no-repeat center center
     fixed;
   background-size: cover;
-  font-family: "Arial", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
   animation: fadeIn 1.5s ease-in-out;
+  padding-top: 80px;
 }
 
 .app {
