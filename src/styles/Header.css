@@ -112,7 +112,7 @@ body.menu-open {
   width: 100vw;
   height: 100vh;
   background: #0f172a;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 20px;
   z-index: 1100;
@@ -206,6 +206,7 @@ body.menu-open {
   .aside-menu {
     width: 100%;
     padding: 10px 10px 20px 10px;
+    display: flex;
   }
 
   .aside-item {
