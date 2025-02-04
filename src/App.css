@@ -11,7 +11,7 @@ body {
   background: url("https://i.imgur.com/i5q4V1O.png") no-repeat center center
     fixed;
   background-size: cover;
-  font-family: "Roboto", sans-serif;
+  font-family: "Courier New", Courier, monospace;
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
