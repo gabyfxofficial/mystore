@@ -72,32 +72,6 @@ function Header() {
           <Link to="/about" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faInfoCircle} /> About
           </Link>
-          <Link
-            to="/wishlist"
-            className="nav-item badge-container"
-            onClick={scrollToTop}
-          >
-            <FontAwesomeIcon icon={faHeart} /> Wishlist
-            {wishlist.length > 0 && (
-              <span
-                className={`badge-circle ${wishlistChanged ? "changed" : ""}`}
-              >
-                {wishlist.length}
-              </span>
-            )}
-          </Link>
-          <Link
-            to="/cart"
-            className="nav-item badge-container"
-            onClick={scrollToTop}
-          >
-            <FontAwesomeIcon icon={faShoppingCart} /> Cart
-            {totalCartItems > 0 && (
-              <span className={`badge-circle ${cartChanged ? "changed" : ""}`}>
-                {totalCartItems}
-              </span>
-            )}
-          </Link>
           <Link to="/my-account" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faUserCircle} /> My Account
           </Link>
@@ -175,7 +149,17 @@ function Header() {
 
         <div className="aside-divider"></div>
 
-        <div className="aside-section-title">Cart</div>
+        <div className="aside-section-title">Account</div>
+        <Link
+          to="/my-account"
+          className="aside-item"
+          onClick={() => {
+            toggleAside();
+            scrollToTop();
+          }}
+        >
+          <FontAwesomeIcon icon={faUserCircle} /> My Account
+        </Link>
         <Link
           to="/cart"
           className="aside-item badge-container"
@@ -210,18 +194,6 @@ function Header() {
         </Link>
 
         <div className="aside-divider"></div>
-
-        <div className="aside-section-title">Account</div>
-        <Link
-          to="/my-account"
-          className="aside-item"
-          onClick={() => {
-            toggleAside();
-            scrollToTop();
-          }}
-        >
-          <FontAwesomeIcon icon={faUserCircle} /> My Account
-        </Link>
 
         <button
           className="aside-item logout-button"
