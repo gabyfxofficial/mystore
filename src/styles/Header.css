@@ -124,6 +124,7 @@ body.menu-open {
 
 .aside-menu.open {
   left: 0;
+  display: flex;
 }
 
 .aside-close-button {
@@ -208,7 +209,6 @@ body.menu-open {
   .aside-menu {
     width: 100%;
     padding: 10px 10px 20px 10px;
-    display: flex;
   }
 
   .aside-item {
@@ -224,5 +224,11 @@ body.menu-open {
   .aside-close-button {
     font-size: 20px;
     margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
   }
 }

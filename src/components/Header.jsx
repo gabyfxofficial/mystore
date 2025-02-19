@@ -24,7 +24,7 @@ function Header() {
 
   const toggleAside = () => {
     setAsideOpen(!asideOpen);
-    document.body.classList.toggle("menu-open", !asideOpen); // Prevent scroll when menu is open
+    document.body.classList.toggle("menu-open", !asideOpen);
   };
 
   const totalCartItems = cartItems.reduce(
@@ -71,6 +71,32 @@ function Header() {
           </Link>
           <Link to="/about" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faInfoCircle} /> About
+          </Link>
+          <Link
+            to="/wishlist"
+            className="nav-item badge-container"
+            onClick={scrollToTop}
+          >
+            <FontAwesomeIcon icon={faHeart} /> Wishlist
+            {wishlist.length > 0 && (
+              <span
+                className={`badge-circle ${wishlistChanged ? "changed" : ""}`}
+              >
+                {wishlist.length}
+              </span>
+            )}
+          </Link>
+          <Link
+            to="/cart"
+            className="nav-item badge-container"
+            onClick={scrollToTop}
+          >
+            <FontAwesomeIcon icon={faShoppingCart} /> Cart
+            {totalCartItems > 0 && (
+              <span className={`badge-circle ${cartChanged ? "changed" : ""}`}>
+                {totalCartItems}
+              </span>
+            )}
           </Link>
           <Link to="/my-account" className="nav-item" onClick={scrollToTop}>
             <FontAwesomeIcon icon={faUserCircle} /> My Account
@@ -151,14 +177,21 @@ function Header() {
 
         <div className="aside-section-title">Account</div>
         <Link
-          to="/my-account"
-          className="aside-item"
+          to="/wishlist"
+          className="aside-item badge-container"
           onClick={() => {
             toggleAside();
             scrollToTop();
           }}
         >
-          <FontAwesomeIcon icon={faUserCircle} /> My Account
+          <FontAwesomeIcon icon={faHeart} /> Wishlist
+          {wishlist.length > 0 && (
+            <span
+              className={`badge-circle ${wishlistChanged ? "changed" : ""}`}
+            >
+              {wishlist.length}
+            </span>
+          )}
         </Link>
         <Link
           to="/cart"
@@ -176,21 +209,14 @@ function Header() {
           )}
         </Link>
         <Link
-          to="/wishlist"
-          className="aside-item badge-container"
+          to="/my-account"
+          className="aside-item"
           onClick={() => {
             toggleAside();
             scrollToTop();
           }}
         >
-          <FontAwesomeIcon icon={faHeart} /> Wishlist
-          {wishlist.length > 0 && (
-            <span
-              className={`badge-circle ${wishlistChanged ? "changed" : ""}`}
-            >
-              {wishlist.length}
-            </span>
-          )}
+          <FontAwesomeIcon icon={faUserCircle} /> My Account
         </Link>
 
         <div className="aside-divider"></div>
