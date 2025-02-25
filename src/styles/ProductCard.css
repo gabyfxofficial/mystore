@@ -136,22 +136,3 @@
     gap: 8px;
   }
 }
-
-/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm tranzițiile, animațiile și transformările */
-@media (max-width: 480px) {
-  .product-card,
-  .product-card img,
-  .add-to-cart-button,
-  .add-to-wishlist-button {
-    transition: none !important;
-    transform: none !important;
-  }
-
-  .product-card:hover,
-  .product-card:hover img,
-  .add-to-cart-button:hover,
-  .add-to-wishlist-button:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-}

@@ -182,20 +182,3 @@
     padding: 8px;
   }
 }
-
-/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm animațiile, tranzițiile și transformările */
-@media (max-width: 480px) {
-  #preloader,
-  #loader,
-  #loader:before,
-  #loader:after,
-  .login-button:hover {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-  }
-
-  .form-group input:focus {
-    box-shadow: none !important;
-  }
-}

@@ -85,16 +85,4 @@
   .privacy-policy p {
     font-size: 13px;
   }
-
-  /* Dezactivăm tranzițiile, animațiile și transformările pe telefoane */
-  .privacy-policy,
-  .privacy-policy h1,
-  .privacy-policy h2,
-  .privacy-policy p,
-  .privacy-policy ul,
-  .privacy-policy a {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-  }
 }

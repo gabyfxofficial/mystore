@@ -98,7 +98,6 @@
   color: #888888;
 }
 
-/* Responsive adjustments pentru tablete */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -121,7 +120,6 @@
   }
 }
 
-/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm tranzițiile și efectele de hover */
 @media (max-width: 480px) {
   .brand h2 {
     font-size: 20px;
@@ -129,20 +127,13 @@
 
   .social-icons a {
     font-size: 18px;
-    transition: none !important;
   }
 
   .footer-links a {
     font-size: 12px;
-    transition: none !important;
   }
 
   .footer-note {
     font-size: 10px;
-  }
-
-  .footer-links a:hover,
-  .social-icons a:hover {
-    color: #d4d4d4 !important;
   }
 }

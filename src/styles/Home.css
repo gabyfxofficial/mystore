@@ -214,7 +214,6 @@
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .feature-cards,
   .benefit-cards,
@@ -243,28 +242,5 @@
 
   .snowflake {
     font-size: 1em;
-  }
-}
-
-/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm animațiile, tranzițiile și transformările */
-@media (max-width: 480px) {
-  .home,
-  .hero-section,
-  .hero-section h1,
-  .hero-section p,
-  .promo-section,
-  .feature-card,
-  .benefit-card,
-  .testimonial-card,
-  .snowflake {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .shop-now-button,
-  .feature-card:hover,
-  .benefit-card:hover,
-  .testimonial-card:hover {
-    transform: none !important;
   }
 }

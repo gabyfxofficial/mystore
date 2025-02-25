@@ -232,31 +232,3 @@ body.menu-open {
     display: flex !important;
   }
 }
-
-/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm animațiile, tranzițiile și efectele de mișcare */
-@media (max-width: 480px) {
-  .nav-item,
-  .logout-button,
-  .aside-close-button,
-  .aside-item,
-  .badge-circle {
-    transition: none !important;
-  }
-
-  .nav-item:hover,
-  .logout-button:hover,
-  .aside-close-button:hover,
-  .aside-item:hover {
-    transform: none !important;
-    background-color: inherit !important;
-    color: inherit !important;
-  }
-
-  .badge-circle.changed {
-    animation: none !important;
-  }
-
-  .aside-menu {
-    transition: none !important;
-  }
-}

@@ -168,13 +168,6 @@
 @media (max-width: 480px) {
   .payment-container {
     padding: 20px 15px;
-    animation: none !important;
-  }
-
-  .payment-container:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    transition: none !important;
   }
 
   .payment-title {
@@ -183,25 +176,10 @@
 
   .payment-button {
     font-size: 13px;
-    transition: none !important;
-  }
-
-  .payment-button:hover,
-  .payment-button:active {
-    transform: none !important;
-    box-shadow: none !important;
   }
 
   .payment-input {
     padding: 8px;
     font-size: 12px;
-  }
-
-  .input-error-message {
-    animation: none !important;
-  }
-
-  .notification-box {
-    animation: none !important;
   }
 }

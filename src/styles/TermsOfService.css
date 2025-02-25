@@ -85,16 +85,4 @@
   .terms-of-service p {
     font-size: 13px;
   }
-
-  /* Dezactivăm animațiile, tranzițiile și transformările pe telefoane */
-  .terms-of-service,
-  .terms-of-service h1,
-  .terms-of-service h2,
-  .terms-of-service p,
-  .terms-of-service ul,
-  .terms-of-service a {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-  }
 }
