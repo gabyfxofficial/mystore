@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 .about {
   display: flex;
   flex-direction: column;
@@ -12,9 +14,10 @@
   margin: 0;
   box-sizing: border-box;
   position: relative;
+  font-family: "Roboto", sans-serif;
 }
 
-.about h1 {
+.about-title {
   font-size: 50px;
   font-weight: 800;
   margin-bottom: 20px;
@@ -22,9 +25,10 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   animation: slideInFromTop 1s ease-in-out;
+  font-family: "Roboto", sans-serif;
 }
 
-.about p {
+.about-text {
   font-size: 20px;
   line-height: 1.7;
   max-width: 800px;
@@ -34,9 +38,10 @@
   transform: translateY(20px);
   animation: fadeInUp 1.5s ease-in-out forwards;
   animation-delay: 0.3s;
+  font-family: "Roboto", sans-serif;
 }
 
-.about p:last-child {
+.about-text:last-child {
   margin-bottom: 0;
 }
 
@@ -48,6 +53,7 @@
   padding: 10px;
   transition: color 0.3s ease, transform 0.3s ease;
   border-radius: 5px;
+  font-family: "Roboto", sans-serif;
 }
 
 .about a:hover {
@@ -57,11 +63,11 @@
 }
 
 @media (max-width: 768px) {
-  .about h1 {
+  .about-title {
     font-size: 36px;
   }
 
-  .about p {
+  .about-text {
     font-size: 18px;
     line-height: 1.6;
     max-width: 90%;
@@ -73,22 +79,26 @@
 }
 
 @media (max-width: 480px) {
-  .about h1 {
-    font-size: 30px;
+  .about {
+    padding: 20px;
+    animation: none !important;
   }
 
-  .about p {
+  .about-title {
+    font-size: 30px;
+    animation: none !important;
+  }
+
+  .about-text {
     font-size: 14px;
     line-height: 1.4;
     max-width: 100%;
-  }
-
-  .about {
-    padding: 20px;
+    animation: none !important;
   }
 
   .about a {
     font-size: 14px;
+    animation: none !important;
   }
 }
 

@@ -236,3 +236,25 @@
     opacity: 1;
   }
 }
+
+/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm animațiile, tranzițiile și transformările */
+@media (max-width: 480px) {
+  .live-chat-container,
+  .toggle-chat-button,
+  .chat-window,
+  .chat-header,
+  .chat-content,
+  .chat-messages,
+  .help-list li,
+  .typing-animation span {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .toggle-chat-button:hover,
+  .help-list li:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+  }
+}

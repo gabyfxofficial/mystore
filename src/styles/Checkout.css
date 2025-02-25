@@ -414,3 +414,39 @@ h2 {
     font-size: 18px;
   }
 }
+
+/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm animațiile și transformările */
+@media (max-width: 480px) {
+  .checkout-page {
+    animation: none !important;
+  }
+
+  .notification {
+    animation: none !important;
+  }
+
+  .notification::before {
+    animation: none !important;
+  }
+
+  .billing-section:hover,
+  .order-summary-section:hover {
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  .payment-option-card,
+  .submit-button,
+  .discount-code-input,
+  .apply-discount-button {
+    transition: none !important;
+  }
+
+  .payment-option-card:hover,
+  .submit-button:hover,
+  .submit-button:active {
+    transform: none !important;
+    background: var(--button-bg) !important;
+    box-shadow: none !important;
+  }
+}

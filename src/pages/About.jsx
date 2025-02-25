@@ -11,9 +11,9 @@ const About = () => {
 
   return (
     <div className="about">
-      <h1>About Us</h1>
+      <h1 className="about-title">About Us</h1>
       {paragraphs.map((text, index) => (
-        <p key={index} style={{ "--index": index }}>
+        <p key={index} className="about-text" style={{ "--index": index }}>
           {text}
         </p>
       ))}

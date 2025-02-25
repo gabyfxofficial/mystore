@@ -62,9 +62,9 @@ const CardPayment = () => {
       });
 
       setTimeout(() => {
-        dispatch(clearCart()); // Golește coșul de produse
+        dispatch(clearCart());
         navigate("/purchase-completed");
-      }, 1000); // Redirect după 1 secundă
+      }, 1000);
     } else {
       setNotification({
         type: "error",

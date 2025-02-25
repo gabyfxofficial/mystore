@@ -110,3 +110,15 @@
     border-radius: 6px;
   }
 }
+
+/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm animațiile, tranzițiile și transformările */
+@media (max-width: 480px) {
+  .purchase-completed,
+  .purchase-completed h1,
+  .purchase-completed p,
+  .navigate-home-button {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

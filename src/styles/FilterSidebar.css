@@ -181,3 +181,36 @@
     font-size: 16px;
   }
 }
+
+/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm animațiile și efectele de mișcare */
+@media (max-width: 480px) {
+  .filter-sidebar {
+    animation: none !important;
+  }
+
+  .apply-button,
+  .reset-button {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .toggle-sidebar-button {
+    transition: none !important;
+  }
+
+  .toggle-sidebar-button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

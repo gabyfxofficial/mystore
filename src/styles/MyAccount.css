@@ -90,3 +90,12 @@
   border-radius: 5px;
   margin: 20px 0;
 }
+
+/* Pentru ecrane foarte mici (max-width: 480px) - dezactivăm animațiile, tranzițiile și transformările */
+@media (max-width: 480px) {
+  #loader,
+  #loader:before,
+  #loader:after {
+    animation: none !important;
+  }
+}
